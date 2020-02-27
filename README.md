@@ -10,6 +10,8 @@ View [Demo](https://davidamunga.github.io/react-editor-demo/)
      alt="Screenshot"
      style="float: center; margin-right: 10px; height:20rem" />
 
+[![Edit react-editor-demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/DavidAmunga/react-editor-demo/tree/master/?fontsize=14&hidenavigation=1&theme=dark)
+
 ## Overview
 
 This project was created to test React Draft Wysiwyg with hooks.
