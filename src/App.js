@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { EditorState, convertToRaw } from 'draft-js';
+import React, { useState, useEffect } from 'react';
+import { EditorState, convertToRaw, ContentState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import draftToHtml from 'draftjs-to-html';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-// import htmlToDraft from 'html-to-draftjs';
+import htmlToDraft from 'html-to-draftjs';
 import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
@@ -35,13 +36,36 @@ function App() {
 
   const theme = useTheme();
   const [editorState, setEditorState] = useState(EditorState.createEmpty())
+  const [convertedEditorState, setConvertedEditorState] = useState(EditorState.createEmpty())
+
 
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState)
   };
+
+
+  const onConvertedEditorState = () => {
+    const html = draftToHtml(convertToRaw(editorState.getCurrentContent()))
+    const contentBlock = htmlToDraft(html);
+    if (contentBlock) {
+      const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
+      const editorState = EditorState.createWithContent(contentState);
+      setConvertedEditorState(editorState)
+    }
+  };
+
+
+
+  useEffect(() => {
+    if (editorState) {
+      onConvertedEditorState()
+    }
+    // eslint-disable-next-line
+  }, [editorState])
+
   return (
-    <Grid container className={classes.root}>
-      <Grid item xs={12}>
+    <Grid container direction="row" spacing={4} className={classes.root}>
+      <Grid item xs={12} sm={6}>
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"
@@ -50,17 +74,27 @@ function App() {
         />
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={12} sm={6}>
         <TextField
           multiline
           rows={2}
           label="HTML Content"
           variant="outlined"
-          filled
           fullWidth
+          name="htmlContent"
           disabled
           value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
         />
+
+
+        <Typography variant="body2">Converted HTML to Editor State</Typography>
+        <Editor
+          editorState={convertedEditorState}
+          wrapperClassName="demo-wrapper"
+          onEditorStateChange={onConvertedEditorState}
+          editorStyle={{ border: `1px solid ${theme.palette.primary.light}`, padding: '1rem', borderRadius: '5px' }}
+        />
+
       </Grid>
     </Grid>
   );
