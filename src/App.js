@@ -7,8 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import htmlToDraft from 'html-to-draftjs';
-import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import './App.css'
 
+import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 
 const useStyles = makeStyles(theme => ({
@@ -71,6 +72,21 @@ function App() {
           wrapperClassName="demo-wrapper"
           onEditorStateChange={onEditorStateChange}
           editorStyle={{ border: `1px solid ${theme.palette.primary.light}`, padding: '1rem', borderRadius: '5px' }}
+          mention={{
+            separator: ' ',
+            trigger: '@',
+            suggestions: [
+              { text: 'APPLE', value: 'apple', url: 'apple' },
+              { text: 'BANANA', value: 'banana', url: 'banana' },
+              { text: 'CHERRY', value: 'cherry', url: 'cherry' },
+              { text: 'DURIAN', value: 'durian', url: 'durian' },
+              { text: 'EGGFRUIT', value: 'eggfruit', url: 'eggfruit' },
+              { text: 'FIG', value: 'fig', url: 'fig' },
+              { text: 'GRAPEFRUIT', value: 'grapefruit', url: 'grapefruit' },
+              { text: 'HONEYDEW', value: 'honeydew', url: 'honeydew' },
+            ],
+          }}
+          hashtag={{}}
         />
       </Grid>
 
@@ -93,6 +109,20 @@ function App() {
           wrapperClassName="demo-wrapper"
           onEditorStateChange={onConvertedEditorState}
           editorStyle={{ border: `1px solid ${theme.palette.primary.light}`, padding: '1rem', borderRadius: '5px' }}
+          mention={{
+            separator: ' ',
+            trigger: '@',
+            suggestions: [
+              { text: 'APPLE', value: 'apple', url: 'apple' },
+              { text: 'BANANA', value: 'banana', url: 'banana' },
+              { text: 'CHERRY', value: 'cherry', url: 'cherry' },
+              { text: 'DURIAN', value: 'durian', url: 'durian' },
+              { text: 'EGGFRUIT', value: 'eggfruit', url: 'eggfruit' },
+              { text: 'FIG', value: 'fig', url: 'fig' },
+              { text: 'GRAPEFRUIT', value: 'grapefruit', url: 'grapefruit' },
+              { text: 'HONEYDEW', value: 'honeydew', url: 'honeydew' },
+            ],
+          }}
         />
 
       </Grid>
