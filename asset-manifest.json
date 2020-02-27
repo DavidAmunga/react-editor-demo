@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/main.40942418.chunk.js",
+    "main.js.map": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/main.40942418.chunk.js.map",
+    "runtime-main.js": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/runtime-main.a69fdfca.js",
+    "runtime-main.js.map": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/runtime-main.a69fdfca.js.map",
+    "static/css/2.806183df.chunk.css": "/git@github.com:DavidAmunga/react-editor-demo.git/static/css/2.806183df.chunk.css",
+    "static/js/2.8cab5cba.chunk.js": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/2.8cab5cba.chunk.js",
+    "static/js/2.8cab5cba.chunk.js.map": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/2.8cab5cba.chunk.js.map",
+    "index.html": "/git@github.com:DavidAmunga/react-editor-demo.git/index.html",
+    "precache-manifest.5b4009409ce829577f101e6d967c7043.js": "/git@github.com:DavidAmunga/react-editor-demo.git/precache-manifest.5b4009409ce829577f101e6d967c7043.js",
+    "service-worker.js": "/git@github.com:DavidAmunga/react-editor-demo.git/service-worker.js",
+    "static/css/2.806183df.chunk.css.map": "/git@github.com:DavidAmunga/react-editor-demo.git/static/css/2.806183df.chunk.css.map",
+    "static/js/2.8cab5cba.chunk.js.LICENSE.txt": "/git@github.com:DavidAmunga/react-editor-demo.git/static/js/2.8cab5cba.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a69fdfca.js",
+    "static/css/2.806183df.chunk.css",
+    "static/js/2.8cab5cba.chunk.js",
+    "static/js/main.40942418.chunk.js"
+  ]
+}
